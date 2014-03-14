@@ -31,3 +31,25 @@
 <br>
 
 <%= link_to 'New Product', new_product_path %>
+
+<p>
+  Average price of products: <%= @products.pluck(:price).reduce(:+) / @products.size %> 
+</p>
+
+<p>
+  The maximum price of any product: <%= @products.pluck(:price).max %>
+</p>
+
+<p>
+  The total number of unique products: <%= @products.distinct.pluck(:title).count %>
+</p>
+
+<p>
+  Total stock quantity of all items: <%= @products.pluck(:stock_quantity).reduce(:+) %>
+</p>
+
+<p>
+  <% 100.times.each do |i| %>
+    <%= "Chunky Bacon" %><br>
+  <% end %>
+</p>
