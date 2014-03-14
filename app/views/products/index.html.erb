@@ -32,6 +32,7 @@
 
 <%= link_to 'New Product', new_product_path %>
 
+
 <p>
   Average price of products: <%= @products.pluck(:price).reduce(:+) / @products.size %> 
 </p>
